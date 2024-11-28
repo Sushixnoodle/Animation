@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [Header("Movement Settings")]
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
@@ -44,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckGrounded();
         Move();
+
+        animator = GetComponent<Animator>();
     }
 
     void CheckGrounded()
@@ -70,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(runKey) && !isCrouching)
         {
             speed = runSpeed;
+           
         }
         else if (isCrouching)
         {
